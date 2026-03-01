@@ -5,7 +5,7 @@
 *Completed 1 out of 7*
 
 ### 🛠 Roadmap
-- [x] **Laboratory Work №1** 
+- [x] **[Laboratory Work №1](https://github.com/xpertdreamer/deep-neural-networks/tree/77cd914978b01a38f8b1101c8d5a275ac8a0b9ae/lab_1)** 
 - [ ] **Laboratory Work №2** 
 - [ ] **Laboratory Work №3** 
 - [ ] **Laboratory Work №4** 
