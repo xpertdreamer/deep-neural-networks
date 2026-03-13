@@ -2,11 +2,11 @@
 
 # 🧠 Deep Neural Networks Course
 ### 📊 Progress
-*Completed 1 out of 7*
+*Completed 2 out of 7*
 
 ### 🛠 Roadmap
 - [x] **[Laboratory Work №1](https://github.com/xpertdreamer/deep-neural-networks/tree/77cd914978b01a38f8b1101c8d5a275ac8a0b9ae/lab_1)** 
-- [ ] **Laboratory Work №2** 
+- [x] **[Laboratory Work №2](https://github.com/xpertdreamer/deep-neural-networks/tree/c795500c79e8d8e375c49908688a87da11162db1/lab_2)** 
 - [ ] **Laboratory Work №3** 
 - [ ] **Laboratory Work №4** 
 - [ ] **Laboratory Work №5** 
