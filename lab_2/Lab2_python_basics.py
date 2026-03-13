@@ -170,3 +170,10 @@ else:
     
 
 # Task 1
+import random as rand
+
+n = int(20)
+
+numbers = [rand.randint(1, 100) for _ in range(n)]
+even_nums_count = sum(1 for x in numbers if not x % 2)
+print(even_nums_count)
