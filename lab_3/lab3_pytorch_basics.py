@@ -223,6 +223,9 @@ for i in range(0,10):
     optimizer.step()
 """
 import torch
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np 
 
 # Task 1
 x = torch.randint(1, 6, (1,), dtype=torch.int32)                        # 1
@@ -232,3 +235,37 @@ res = res * torch.randint(1, 11, (1, ))                                 # 3.2
 y = torch.exp(res)                                                      # 3.3
 y.backward()                                                            # 4
 print(x.grad.item())                                                    # 4
+
+# Task 2
+df = pd.read_csv('data.csv')
+y = df.iloc[:, 4].values
+y = np.where(y == "Iris-setosa", 1, -1)
+X = df.iloc[:, [0, 1]].values
+
+X_tensor = torch.tensor(X, dtype=torch.float32)
+y_tensor = torch.tensor(y, dtype=torch.float32).reshape(-1, 1)
+
+neuron = torch.nn.Linear(2, 1)
+lossFN = torch.nn.MSELoss()
+optimizer = torch.optim.SGD(neuron.parameters(), lr=0.01)
+
+for i in range(2001):
+    optimizer.zero_grad()
+    pred = neuron(X_tensor)
+    loss = lossFN(pred, y_tensor)
+
+    loss.backward()
+    optimizer.step()
+
+    if i % 200 == 0:  
+        print(f'Iteration {i}, Loss: {loss.item()}')
+
+plt.scatter(X[y==1, 0], X[y==1, 1], c='red', marker='o', label="Iris-setosa")
+plt.scatter(X[y==-1, 0], X[y==-1, 1], c='blue', marker='x', label='Other')
+
+w1, w2 = neuron.weight.data.numpy().flatten()
+b = neuron.bias.data.item()
+x_line = np.array([X[:, 0].min(), X[:, 0].max()])
+plt.plot(x_line, -(w1 * x_line + b) / w2, 'k-')
+
+plt.show()
