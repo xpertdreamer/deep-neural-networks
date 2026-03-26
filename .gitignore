@@ -1,2 +1,14 @@
-.venv
-.direnv
+.venv/
+.direnv/
+.envrc
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.jupyter/
+.ipython/
+.pytest_cache/
+.coverage
+htmlcov/
+*.egg-info/
+dist/
+build/

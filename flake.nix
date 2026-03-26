@@ -75,10 +75,77 @@
             packages = with python.pkgs; [
               venvShellHook
               pip
-              pkgs.basedpyright
+
+              # === Научные вычисления ===
+              numpy
+              scipy
+              matplotlib
+              sympy
+              pandas
+              numpydoc
+
+              # === Машинное обучение ===
+              scikit-learn
+              torch
+              joblib
+
+              # === Jupyter ===
+              jupyter
+              jupyter-client
+              jupyter-core
+              ipykernel
+              ipython
+              nbconvert
+              nbformat
+
+              # === Асинхронность ===
+              aiohttp
+              aiodns
+              asyncssh
+              uvloop
+
+              # === Базы данных ===
+              mysqlclient
+              psycopg2
+
+              # === Инструменты разработки ===
+              black
+              isort
+              flake8
+              pylint
+              mypy
+              ruff
+
+              # === LSP ===
               python-lsp-server
-              pkgs.conda
-              pkgs.jupyter
+              python-lsp-black
+              python-lsp-ruff
+
+              # === Документация ===
+              sphinx
+              docutils
+
+              # === Веб ===
+              requests
+              click
+              jinja2
+              pyyaml
+
+              # === Утилиты ===
+              tqdm
+              rich
+              packaging
+              psutil
+              watchdog
+
+              # === Обработка данных ===
+              pillow
+              beautifulsoup4
+
+              # === Дополнительно ===
+              pytest
+              pytest-cov
+              tox
             ];
           };
         }
