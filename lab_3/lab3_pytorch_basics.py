@@ -1,4 +1,4 @@
-
+""" 
 
 ## !!!!Программа должна запускаться в режиме интерпретатора построчно или блоками кода!!!!!!!
 ## !!!!!!!!   Чтиайте комментарии и только после этого запускайте код !!!!!!!!!!!!!
@@ -221,7 +221,14 @@ for i in range(0,10):
     print('Ошибка на ' + str(i+1) + ' итерации: ', loss.item())
     loss.backward()
     optimizer.step()
-    
-    
-    
+"""
+import torch
 
+# Task 1
+x = torch.randint(1, 6, (1,), dtype=torch.int32)                        # 1
+x = x.to(dtype=torch.float32).requires_grad_(True)                      # 2
+res = x**2                                                              # 3.1
+res = res * torch.randint(1, 11, (1, ))                                 # 3.2
+y = torch.exp(res)                                                      # 3.3
+y.backward()                                                            # 4
+print(x.grad.item())                                                    # 4
