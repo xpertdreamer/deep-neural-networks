@@ -5,10 +5,12 @@ import matplotlib.pyplot as plt
 
 df = pd.read_csv('dataset_simple.csv')
 # Here I tried to basically normalize input values to make loss a little lower
-x_max = df.iloc[:, 0].std()
-y_max = df.iloc[:, 1].std()
-X = torch.tensor(df.iloc[0:, 0].values / x_max, dtype = torch.float32).reshape(-1, 1) # age as feature
-y = torch.tensor(df.iloc[0:, 1].values / y_max, dtype = torch.float32).reshape(-1, 1) # income as target
+x_max = df.iloc[:, 0].max()
+y_max = df.iloc[:, 1].max()
+X = torch.tensor(df.iloc[0:, 0].values / x_max, 
+                 dtype = torch.float32).reshape(-1, 1) # age as feature
+y = torch.tensor(df.iloc[0:, 1].values / y_max, 
+                 dtype = torch.float32).reshape(-1, 1) # income as target
 
 input_size = X.shape[1]
 hidden_size = 20
