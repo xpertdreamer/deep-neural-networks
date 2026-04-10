@@ -150,7 +150,7 @@ class NNet_multiclass(nn.Module):
 
 # задаем параметры сети
 inputSize = X.shape[1] # количество признаков задачи 
-hiddenSizes = 3     #  число нейронов скрытого слоя 
+hiddenSizes = 10     #  число нейронов скрытого слоя 
 outputSize = y.shape[1] # число нейронов выходного слоя равно числу классов задачи
 
 net = NNet_multiclass(inputSize,hiddenSizes,outputSize)
