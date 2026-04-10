@@ -1,4 +1,4 @@
-""" 
+
 
 ## !!!!Программа должна запускаться в режиме интерпретатора построчно или блоками кода!!!!!!!
 ## !!!!!!!!   Чтиайте комментарии и только после этого запускайте код !!!!!!!!!!!!!
@@ -107,7 +107,7 @@ else:
 
 # device теперь хранит тип устройства на котором можно проводить вычисления
 # создавать тензоры можно в памяти видеокарты, если CUDA доступна
-a = torch.Tensor([[1,2],[3,4]]).to(device) 
+a = torch.Tensor(5, 3).to(device) 
 
 # Для обучения нейронных сетей некоторые тензоры 
 # должны отслеживать градиенты (происходящие с ними изменения)
@@ -221,8 +221,8 @@ for i in range(0,10):
     print('Ошибка на ' + str(i+1) + ' итерации: ', loss.item())
     loss.backward()
     optimizer.step()
-"""
-import torch
+
+""" import torch
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np 
@@ -268,4 +268,4 @@ b = neuron.bias.data.item()
 x_line = np.array([X[:, 0].min(), X[:, 0].max()])
 plt.plot(x_line, -(w1 * x_line + b) / w2, 'k-')
 
-plt.show()
+plt.show() """
