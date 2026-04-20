@@ -20,7 +20,7 @@ class NNet(nn.Module):
                                     nn.Tanh()
                                     )
     # прямой проход    
-    def forward(self,X):
+    def forward(self, X):
         pred = self.layers(X)
         return pred
 
