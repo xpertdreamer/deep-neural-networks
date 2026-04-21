@@ -87,6 +87,7 @@
               # === Машинное обучение ===
               scikit-learn
               torch
+              torchvision
               joblib
 
               # === Jupyter ===
